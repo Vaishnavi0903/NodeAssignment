@@ -13,15 +13,6 @@ const updatebookRoutes = require('./routes/updateBookRoutes.js');
 const Database = require("./config/database");
 require('dotenv').config();
 
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://127.0.0.1:27017/LibraryManagementSystem",{useNewUrlParser:true}).then(()=>{
-    console.log("Successfully connected to database")
-}).catch((err)=>{
-    console.log("Could not connect to database" , err);
-    process.exit();
-});
-
-
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
